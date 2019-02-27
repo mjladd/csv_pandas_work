@@ -1,0 +1,12 @@
+#!/bin/sh
+PY=$(which python3)
+PIP=$(pwd)/env/bin/pip
+
+
+$PY -m venv env
+$PIP install --upgrade pip setuptools
+$PIP install --upgrade pandas
+
+source env/bin/activate
+
+python normalizer.py < sample.csv
